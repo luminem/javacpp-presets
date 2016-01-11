@@ -31,23 +31,48 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  * @author Samuel Audet
  */
 @Properties(target="org.bytedeco.javacpp.avutil", value={
-    @Platform(define="__STDC_CONSTANT_MACROS", cinclude={"<libavutil/avutil.h>", "<libavutil/error.h>", "<libavutil/mem.h>",
-        "<libavutil/mathematics.h>", "<libavutil/rational.h>", "<libavutil/log.h>", "<libavutil/buffer.h>", "<libavutil/frame.h>",
-        "<libavutil/pixfmt.h>", "<libavutil/samplefmt.h>", "<libavutil/channel_layout.h>", "<libavutil/cpu.h>", "<libavutil/dict.h>",
-        "<libavutil/opt.h>", "<libavutil/audioconvert.h>", "<libavutil/pixdesc.h>", "<libavutil/imgutils.h>", "<libavutil/opt.h>",
-        "<libavutil/downmix_info.h>", "<libavutil/stereo3d.h>", "<libavutil/time.h>"},
+    @Platform(define="__STDC_CONSTANT_MACROS", cinclude={
+        "<libavutil/avutil.h>",
+        "<libavutil/buffer.h>",
+        "<libavutil/channel_layout.h>",
+        "<libavutil/cpu.h>",
+        "<libavutil/dict.h>",
+        "<libavutil/downmix_info.h>",
+        "<libavutil/error.h>",
+        "<libavutil/frame.h>",
+        "<libavutil/imgutils.h>",
+        "<libavutil/log.h>",
+        "<libavutil/mathematics.h>",
+        "<libavutil/mem.h>",
+        "<libavutil/opt.h>",
+        "<libavutil/opt.h>",
+        "<libavutil/pixdesc.h>",
+        "<libavutil/pixfmt.h>",
+        "<libavutil/rational.h>",
+        "<libavutil/samplefmt.h>",
+        "<libavutil/stereo3d.h>",
+        "<libavutil/time.h>"
+        },
         includepath={"/usr/local/include/libav/", "/opt/local/include/libav/", "/usr/include/libav/"},
-        link="avutil@.52", compiler={"default", "nodeprecated"}),
+        link="avutil@.55", compiler={"default", "nodeprecated"}),
     @Platform(value="android", link="avutil")
 })
 public class avutil implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("AV_NOPTS_VALUE").cppTypes("int64_t").translate(false))
-               .put(new Info("AV_TIME_BASE_Q", "PixelFormat", "CodecID").cppTypes())
+               .put(new Info("AVChromaLocation",
+                             "AVCodecID",
+                             "AVColorPrimaries",
+                             "AVColorRange",
+                             "AVColorSpace",
+                             "AVColorTransferCharacteristic",
+                             "AVPixelFormat",
+                             "AV_TIME_BASE_Q").cppTypes())
                .put(new Info("av_const").annotations("@Const"))
                .put(new Info("av_malloc_attrib", "av_alloc_size", "av_always_inline").cppTypes().annotations())
                .put(new Info("attribute_deprecated").annotations("@Deprecated"))
                .put(new Info("AVPanScan", "AVCodecContext").cast().pointerTypes("Pointer"))
+               .put(new Info("AV_CH_LAYOUT_HEXADECAGONAL").translate().cppTypes("long"))
                .put(new Info("FF_API_AVFRAME_COLORSPACE").define(false));
     }
 }

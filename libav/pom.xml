@@ -6,12 +6,12 @@
   <parent>
     <groupId>org.bytedeco</groupId>
     <artifactId>javacpp-presets</artifactId>
-    <version>0.8-2-SNAPSHOT</version>
+    <version>1.1</version>
   </parent>
 
   <groupId>org.bytedeco.javacpp-presets</groupId>
   <artifactId>libav</artifactId>
-  <version>2.2.1-${project.parent.version}</version>
+  <version>12-${project.parent.version}</version>
   <packaging>jar</packaging>
   <name>JavaCPP Presets for Libav</name>
 

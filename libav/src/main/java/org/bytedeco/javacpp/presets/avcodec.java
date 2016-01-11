@@ -37,6 +37,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 public class avcodec implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.putFirst(new Info("AVPanScan").pointerTypes("AVPanScan"))
+               .putFirst(new Info("AVChromaLocation",
+                             "AVCodecID",
+                             "AVColorPrimaries",
+                             "AVColorRange",
+                             "AVColorSpace",
+                             "AVColorTransferCharacteristic",
+                             "AVPixelFormat",
+                             "AV_TIME_BASE_Q").cppTypes())
                .putFirst(new Info("AVCodecContext").pointerTypes("AVCodecContext"));
     }
 }
