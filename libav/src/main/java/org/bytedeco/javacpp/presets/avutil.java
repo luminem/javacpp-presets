@@ -60,14 +60,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
 public class avutil implements InfoMapper {
     public void map(InfoMap infoMap) {
         infoMap.put(new Info("AV_NOPTS_VALUE").cppTypes("int64_t").translate(false))
-               .put(new Info("AVChromaLocation",
-                             "AVCodecID",
-                             "AVColorPrimaries",
-                             "AVColorRange",
-                             "AVColorSpace",
-                             "AVColorTransferCharacteristic",
-                             "AVPixelFormat",
-                             "AV_TIME_BASE_Q").cppTypes())
+               .put(new Info("AV_TIME_BASE_Q").cppTypes())
+               .putFirst(new Info("AVPixelFormat").valueTypes("int"))
+               .putFirst(new Info("AVColorRange").valueTypes("int"))
+                .putFirst(new Info("AVColorPrimaries").valueTypes("int"))
+                .putFirst(new Info("AVColorSpace").valueTypes("int"))
+                .putFirst(new Info("AVCodecID").valueTypes("int"))
+                .putFirst(new Info("AVColorTransferCharacteristic").valueTypes("int"))
+                .putFirst(new Info("AVChromaLocation").valueTypes("int"))
                .put(new Info("av_const").annotations("@Const"))
                .put(new Info("av_malloc_attrib", "av_alloc_size", "av_always_inline").cppTypes().annotations())
                .put(new Info("attribute_deprecated").annotations("@Deprecated"))
