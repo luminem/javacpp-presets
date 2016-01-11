@@ -48,6 +48,22 @@ case $PLATFORM in
         popd
         ;;
     *)
-        echo "Error: Platform \"$PLATFORM\" is not supported yet"
+        echo "Warning: Assuming Platform \"$PLATFORM\" as native"
+        pushd $SPEEX
+        autoreconf -i
+        ./configure --prefix="/" --disable-shared --enable-static --without-ogg --with-pic
+        make -j4
+        make DESTDIR="${DEPS_PATH}" install
+        popd
+        pushd $X264
+        ./configure --prefix="/" --enable-static --enable-pic --disable-cli --disable-lavf
+        make -j4
+        make DESTDIR="${DEPS_PATH}" install
+        popd
+        pushd $LIBAV_DIR
+        ./configure --prefix="${INST_PATH}" --enable-shared --enable-gpl --enable-version3 --enable-libx264 --enable-libspeex --disable-programs --pkg-config=pkg-config
+        make -j4
+        make install
+        popd
         ;;
 esac
