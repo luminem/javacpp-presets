@@ -96,6 +96,7 @@ export ANDROID_CC="$ANDROID_NDK/toolchains/llvm/prebuilt/$KERNEL-$ARCH/bin/clang
 export ANDROID_CPP="$ANDROID_NDK/sources/cxx-stl/llvm-libc++/"
 case $PLATFORM in
     android-arm)
+        echo $ANDROID_CC
         export ANDROID_BIN="$ANDROID_NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/$KERNEL-$ARCH/"
         export ANDROID_ROOT="$ANDROID_NDK/platforms/android-21/arch-arm/"
         export ANDROID_FLAGS="--gcc-toolchain=$ANDROID_BIN --sysroot=$ANDROID_ROOT -isystem $ANDROID_CPP/include/ -isystem $ANDROID_CPP/../llvm-libc++abi/include/ -isystem $ANDROID_NDK/sources/android/support/include/ -isystem $ANDROID_CPP/libs/armeabi-v7a/include/ -isystem $ANDROID_NDK/sysroot/usr/include/ -isystem $ANDROID_NDK/sysroot/usr/include/arm-linux-androideabi/ -isystem $ANDROID_ROOT/usr/include/ -isystem $ANDROID_NDK/sources/android/cpufeatures/ -D__ANDROID_API__=21 -DANDROID -fPIC -ffunction-sections -funwind-tables -fstack-protector-strong -target armv7-none-linux-androideabi -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -z text -Wno-unused-command-line-argument -Wno-unknown-warning-option -Wno-ignored-optimization-argument -Wl,--fix-cortex-a8 -L$ANDROID_CPP/libs/armeabi-v7a/ -L$ANDROID_ROOT/usr/lib/ -Wl,--no-undefined -static-libstdc++"
