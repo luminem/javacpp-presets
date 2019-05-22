@@ -9,7 +9,7 @@ fi
 
 
 # minimal configuration to support MPEG-4 streams with H.264 and AAC as well as Motion JPEG
-DISABLE="--disable-iconv --disable-libxcb --disable-opencl --disable-sdl2 --disable-bzlib --disable-lzma --disable-linux-perf --disable-everything"
+DISABLE="--disable-iconv --disable-libxcb --disable-opencl --disable-sdl2 --disable-bzlib --disable-lzma --disable-linux-perf --disable-everything --disable-swscale --disable-swresample"
 ENABLE="--enable-shared \
     --enable-runtime-cpudetect
     --enable-parser=h264 --enable-parser=aac
