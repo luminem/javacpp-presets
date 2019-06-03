@@ -2947,7 +2947,7 @@ public static final int AV_PIX_FMT_P016 = AV_PIX_FMT_P016();
 
 /**
   * Chromaticity coordinates of the source primaries.
-  * These values match the ones defined by ISO/IEC 23001-8_2013 § 7.1.
+  * These values match the ones defined by ISO/IEC 23001-8_2013 ?? 7.1.
   */
 /** enum AVColorPrimaries */
 public static final int
@@ -2983,7 +2983,7 @@ public static final int
 
 /**
  * Color Transfer Characteristic.
- * These values match the ones defined by ISO/IEC 23001-8_2013 § 7.2.
+ * These values match the ones defined by ISO/IEC 23001-8_2013 ?? 7.2.
  */
 /** enum AVColorTransferCharacteristic */
 public static final int
@@ -3028,7 +3028,7 @@ public static final int
 
 /**
  * YUV colorspace type.
- * These values match the ones defined by ISO/IEC 23001-8_2013 § 7.3.
+ * These values match the ones defined by ISO/IEC 23001-8_2013 ?? 7.3.
  */
 /** enum AVColorSpace */
 public static final int

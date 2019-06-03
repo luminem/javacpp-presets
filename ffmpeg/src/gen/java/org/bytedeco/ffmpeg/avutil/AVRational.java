@@ -22,7 +22,7 @@ import static org.bytedeco.ffmpeg.global.avutil.*;
  * denominators.
  *
  * Many of the functions that operate on AVRational's have the suffix {@code _q}, in
- * reference to the mathematical symbol "ℚ" (Q) which denotes the set of all
+ * reference to the mathematical symbol "???" (Q) which denotes the set of all
  * rational numbers.
  *
  * \{

@@ -10,8 +10,6 @@ import org.bytedeco.javacpp.annotation.*;
 
 import org.bytedeco.ffmpeg.avutil.*;
 import static org.bytedeco.ffmpeg.global.avutil.*;
-import org.bytedeco.ffmpeg.swresample.*;
-import static org.bytedeco.ffmpeg.global.swresample.*;
 
 public class avcodec extends org.bytedeco.ffmpeg.presets.avcodec {
     static { Loader.load(); }

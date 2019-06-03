@@ -33,7 +33,7 @@ import org.bytedeco.javacpp.tools.InfoMapper;
  * @author Samuel Audet
  */
 @Properties(
-    inherit = swresample.class,
+    inherit = avutil.class,
     target = "org.bytedeco.ffmpeg.avcodec",
     global = "org.bytedeco.ffmpeg.global.avcodec",
     value = {

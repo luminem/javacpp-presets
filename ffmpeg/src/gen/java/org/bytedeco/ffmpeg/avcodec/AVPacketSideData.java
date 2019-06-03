@@ -8,8 +8,6 @@ import org.bytedeco.javacpp.annotation.*;
 
 import org.bytedeco.ffmpeg.avutil.*;
 import static org.bytedeco.ffmpeg.global.avutil.*;
-import org.bytedeco.ffmpeg.swresample.*;
-import static org.bytedeco.ffmpeg.global.swresample.*;
 
 import static org.bytedeco.ffmpeg.global.avcodec.*;
  //DEPRECATED
